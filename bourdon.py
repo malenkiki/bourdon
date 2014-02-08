@@ -32,6 +32,7 @@ import gettext
 from gettext import gettext as _
 from bourdonlib.version import APP_VERSION
 from bourdonlib.version import APP_NAME
+from bourdonlib.bourdon import Team
 
 local_path = os.path.realpath(os.path.dirname(sys.argv[0])) + os.sep + 'locale'
 
@@ -78,6 +79,10 @@ def main():
     parser.add_option("--xml", dest='xml', help=_("Export response as XML."), metavar=_('FILE'))
     parser.add_option("--json", dest='json', help=_("Export response as JSON."), metavar=_('FILE'))
     (options, args) = parser.parse_args()
+
+    if options.token and options.web_site:
+        b = Bourdon(options.token, options.web_site)
+
 
 
 if __name__ == "__main__":
