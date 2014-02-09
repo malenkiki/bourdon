@@ -32,7 +32,7 @@ import gettext
 from gettext import gettext as _
 from bourdonlib.version import APP_VERSION
 from bourdonlib.version import APP_NAME
-from bourdonlib.bourdon import Team
+from bourdonlib.bourdon import Bourdon
 
 local_path = os.path.realpath(os.path.dirname(sys.argv[0])) + os.sep + 'locale'
 
